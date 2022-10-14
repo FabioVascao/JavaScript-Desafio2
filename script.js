@@ -18,16 +18,19 @@ let listStudents = [ /* Cria um array com objetos dentro */
   }
 ]
 
-let calcMedia = 0;
-let listStudent = [];
+let media = 0;
 
-function media() {
-  let calcMedia = (nota1 + nota2) / 2;
-  return calcMedia;
-}
-
-if (calcMedia >= 7) {
-  alert(`Parabéns ${listStudent.push(listStudents.name)}, você foi aprovado com a média ${calcMedia}`)
+function result(listStudents) {
+  let media = (listStudents.nota1 + listStudents.nota2)/2
+  if (media >= 7) {
+  return (`A média do ${listStudents.name} é de ${media}. Parabéns ${listStudents.name}, você foi aprovado!`)
 } else {
-  alert(`Não foi dessa vez ${listStudent.push(listStudents.name)} , você foi reprovado com a média ${calcMedia}`)
+  return (`A média do ${listStudents.name} é de ${media}. Não foi dessa vez ${listStudents.name}, você foi reprovado.`)
 }
+}
+
+for (let listStudent of listStudents) {
+  let mediaMessage = result(listStudent)
+  alert(mediaMessage)
+}
+
